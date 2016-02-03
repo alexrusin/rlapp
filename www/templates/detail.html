@@ -1,0 +1,46 @@
+<ion-header-bar class="bar-positive" ng-repeat="item in fishs | filter: { image: whichfish }">
+	<h2 class="title">{{item.name}} More Info</h2>
+</ion-header-bar>
+
+<ion-view>
+	<ion-content  class="has-header" ng-repeat="item in fishs | filter: { image: whichfish }">
+		<div class="card">
+	 	 	<div class="item item-divider">
+	    	Taste
+	  		</div>
+	  		<div class="item item-text-wrap">
+	   		 {{item.taste}}
+  			</div>
+  			<div class="item item-divider">
+	    	Texture
+	  		</div>
+	  		<div class="item item-text-wrap">
+	   		 {{item.texture}}
+  			</div>
+  			<div class="item item-divider">
+	    	Suggested Preparation
+	  		</div>
+	  		<div class="item item-text-wrap">
+	   		 {{item.prep}}
+  			</div>
+  			<div class="item item-divider">
+	    	General Origin/Source
+	  		</div>
+	  		<div class="item item-text-wrap">
+	   		 {{item.source}}
+  			</div>
+  			<div class="item item-divider">
+	    	Fishing Method
+	  		</div>
+	  		<div class="item item-text-wrap">
+	   		 {{item.method}}
+  			</div>
+  			<div class="item item-divider">
+	    	Fresh Fish Facts
+	  		</div>
+	  		<div class="item item-text-wrap">
+	   		 {{item.facts}}
+  			</div>
+  		</div>
+	</ion-content>
+</ion-view>

@@ -23,10 +23,52 @@ angular.module('starter', ['ionic'])
   });
 })
 
-.controller('ListController', ['$scope','$http', function($scope, $http){
+.config(function($stateProvider, $urlRouterProvider){
+  $stateProvider
+    .state('tabs', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
+    .state('tabs.home',{
+      url: '/home',
+      views: {
+        'home-tab':{
+          templateUrl: 'templates/home.html'
+          
+        }
+      }
+    })
+    .state('tabs.fishlist',{
+      url: '/fishlist',
+      views: {
+        'list-tab':{
+          templateUrl: 'templates/fishlist.html',
+          controller: 'ListController'
+        }
+      }
+    })
+     .state('tabs.detail', {
+      url: '/fishlist/:aId',
+      views: {
+        'list-tab' : {
+          templateUrl: 'templates/detail.html',
+          controller: 'ListController'
+        }
+      }
+    })
+
+    $urlRouterProvider.otherwise('/tab/home')
+})
+
+.controller('ListController', ['$scope','$http','$state', 
+  function($scope, $http, $state){
   $http.get('js/fresh_fish.json').success(function(data){
     $scope.fishs=data;
+
   });
+ $scope.whichfish=$state.params.aId;
+  
 
   $scope.moveItem = function(item, fromIndex, toIndex){
     $scope.fishs.splice(fromIndex, 1);
