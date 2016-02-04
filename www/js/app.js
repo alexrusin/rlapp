@@ -26,6 +26,8 @@ angular.module('starter', ['ionic'])
 .config(['$ionicConfigProvider', function($ionicConfigProvider) {
 
     $ionicConfigProvider.tabs.position('bottom'); // other values: top
+    $ionicConfigProvider.navBar.alignTitle('center');
+    
 
 }])
 
@@ -36,7 +38,7 @@ angular.module('starter', ['ionic'])
       abstract: true,
       templateUrl: 'templates/tabs.html'
     })
-    
+
     .state('tabs.home',{
       url: '/home',
       views: {
@@ -46,8 +48,16 @@ angular.module('starter', ['ionic'])
         }
       }
     })
+    .state('tabs.resources',{
+      url: '/resources',
+      views: {
+        'list-tab':{
+          templateUrl: 'templates/resourcelist.html'
+         }
+      }
+    })    
     .state('tabs.fishlist',{
-      url: '/fishlist',
+      url: '/resources/fishlist',
       views: {
         'list-tab':{
           templateUrl: 'templates/fishlist.html',
@@ -55,11 +65,11 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-     .state('tabs.detail', {
-      url: '/fishlist/:aId',
+     .state('tabs.fishdetail', {
+      url: '/resources/fishlist/:aId',
       views: {
         'list-tab' : {
-          templateUrl: 'templates/detail.html',
+          templateUrl: 'templates/fishdetail.html',
           controller: 'ListController'
         }
       }
