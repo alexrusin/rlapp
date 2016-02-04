@@ -1,10 +1,10 @@
-<ion-header-bar class="bar-positive" ng-repeat="item in fishs | filter: { image: whichfish }">
-	<h2 class="title">{{item.name}} More Info</h2>
-</ion-header-bar>
-
 <ion-view>
-	<ion-content  class="has-header" ng-repeat="item in fishs | filter: { image: whichfish }">
+		<ion-content  class="has-header" ng-repeat="item in fishs | filter: { image: whichfish }">
+		
 		<div class="card">
+			<button class="button button-full button-positive">
+  			{{item.name}}
+			</button>
 	 	 	<div class="item item-divider">
 	    	Taste
 	  		</div>

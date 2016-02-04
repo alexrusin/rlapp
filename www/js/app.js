@@ -23,6 +23,12 @@ angular.module('starter', ['ionic'])
   });
 })
 
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+    $ionicConfigProvider.tabs.position('bottom'); // other values: top
+
+}])
+
 .config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('tabs', {
@@ -67,6 +73,7 @@ angular.module('starter', ['ionic'])
     $scope.fishs=data;
 
   });
+  $scope.data={showReorder: false};
  $scope.whichfish=$state.params.aId;
   
 
