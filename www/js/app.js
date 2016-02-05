@@ -75,6 +75,16 @@ angular.module('starter', ['ionic'])
       }
     })
 
+     .state('tabs.cracklobster', {
+      url: '/resources/cracklobster',
+      views: {
+        'list-tab' : {
+          templateUrl: 'templates/cracklobster.html',
+          controller: 'CrackLobsterController'
+        }
+      }
+    })
+
     $urlRouterProvider.otherwise('/tab/home')
 })
 
@@ -93,4 +103,14 @@ angular.module('starter', ['ionic'])
     $scope.fishs.splice(toIndex, 0, item);
   }
 
+}])
+
+.controller('CrackLobsterController', ['$scope','$http', 
+  function($scope, $http){
+  $http.get('js/lobster.json').success(function(data){
+    $scope.cracklobster=data;
+
+  });
+ 
 }]);
+

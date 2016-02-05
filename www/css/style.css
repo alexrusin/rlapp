@@ -46,3 +46,7 @@
   font-size: 2rem;
   font-weight: 200;
 }
+
+.lobster-img {
+  max-width: 475px;
+}

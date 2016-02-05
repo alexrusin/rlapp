@@ -1,10 +1,11 @@
-<ion-view>
+   	<ion-view view-title="">
 	<div class="bar bar-subheader bar-light" ng-repeat="item in fishs | filter: { image: whichfish }">
   		<h2 class="title">{{item.name}}</h2>
 	</div>
+
 		<ion-content  class="has-subheader" ng-repeat="item in fishs | filter: { image: whichfish }">
 		
-			<div class="card">
+		<div class="card">
 			<div class="item item-divider">
 	    	Taste
 	  		</div>

@@ -1,22 +1,32 @@
-[{
-	"name":"Atlantic Salmon",
-	"image":"salmon_img",
-	"taste": "Bold",
-	"texture":"Moist, firm",
-	"prep":"Grilled, broiled, blackened",
-	"source":"Pacific Ocean",
-	"method":"Aquaculture",
-	"facts":"Salmon in latin means 'Leaping Salmon.' Originated wild in Atlantic Ocean, farm-raised in Pacific Ocean"
-},
-{
-	"name":"Rainbow Trout",
-	"image":"trout_img",
-	"taste": "Mild",
-	"texture":"Delicate",
-	"prep":"Broiled, grilled, fried, blackened",
-	"source":"Pacific Ocean",
-	"method":"Aquaculture",
-	"facts":"Fresh-water fish related to salmon.  Served with skin on."
-}
-
+[
+	{
+		"name":"Atlantic Salmon",
+		"image":"salmon_img",
+		"taste": "Bold",
+		"texture":"Moist, firm",
+		"prep":"Grilled, broiled, blackened",
+		"source":"Pacific Ocean",
+		"method":"Aquaculture",
+		"facts":"Salmon in latin means 'Leaping Salmon.' Originated wild in Atlantic Ocean, farm-raised in Pacific Ocean."
+	},
+	{
+		"name":"Rainbow Trout",
+		"image":"trout_img",
+		"taste": "Mild",
+		"texture":"Delicate",
+		"prep":"Broiled, grilled, fried, blackened",
+		"source":"Pacific Ocean",
+		"method":"Aquaculture",
+		"facts":"Fresh-water fish related to salmon.  Served with skin on."
+	},
+	{
+		"name":"Halibut",
+		"image":"halibut_img",
+		"taste": "Moderate",
+		"texture":"Firm, Flakey",
+		"prep":"Grilled, broiled, blackened",
+		"source":"Pacific Ocean, Atlantic Ocean",
+		"method":"Wild caught",
+		"facts":"The largest member of Flounder family. Grows to over 450 lbs."
+	}
 ]
