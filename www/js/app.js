@@ -84,6 +84,15 @@ angular.module('starter', ['ionic'])
         }
       }
     })
+     .state('tabs.servewine', {
+      url: '/resources/servewine',
+      views: {
+        'list-tab' : {
+          templateUrl: 'templates/servewine.html',
+          controller: 'ServeWineController'
+        }
+      }
+    })
 
     $urlRouterProvider.otherwise('/tab/home')
 })
@@ -112,5 +121,12 @@ angular.module('starter', ['ionic'])
 
   });
  
+}])
+.controller('ServeWineController', ['$scope','$http', 
+  function($scope, $http){
+  $http.get('js/servewine.json').success(function(data){
+    $scope.wines=data;
+  });
+
 }]);
 

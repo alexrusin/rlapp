@@ -50,3 +50,7 @@
 .lobster-img {
   max-width: 475px;
 }
+
+.card-text {
+  margin: 10px 5px;
+}

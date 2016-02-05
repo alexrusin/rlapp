@@ -1,9 +1,6 @@
-<ion-view view-title="">
-	<div class="bar bar-subheader bar-light">
-  		<h2 class="title">How to Crack a Lobster</h2>
-	</div>
-	<ion-content class="has-subheader">
-		<div class="list card" ng-repeat="item in cracklobster">
+<ion-view view-title="How to Crack a Lobster">
+		<ion-content class="has-header">
+		<div class="card" ng-repeat="item in cracklobster">
 
 		  <div class="item item-divider">
 	    	{{item.header}}
@@ -13,7 +10,7 @@
 		    <img ng-src="img/crack_lobster/{{item.image}}.jpg" alt="{{item.header}}">
 		  </div>
 
-		  <p>
+		  <p class="card-text">
 	   		 {{item.text}}
   		  </p>
 
