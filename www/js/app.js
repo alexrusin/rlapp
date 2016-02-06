@@ -55,6 +55,14 @@ angular.module('starter', ['ionic'])
           templateUrl: 'templates/resourcelist.html'
          }
       }
+    })
+    .state('tabs.quizes',{
+      url: '/quizes',
+      views: {
+        'quiz-tab':{
+          templateUrl: 'templates/practicequizes.html'
+         }
+      }
     })    
     .state('tabs.fishlist',{
       url: '/resources/fishlist',
