@@ -93,6 +93,16 @@ angular.module('starter', ['ionic'])
         }
       }
     })
+    .state('tabs.upselmw', {
+      url: '/resources/upselmw',
+      views: {
+        'list-tab' : {
+          templateUrl: 'templates/upselmw.html',
+          controller: 'UpselmwController'
+        }
+      }
+    })
+
 
     $urlRouterProvider.otherwise('/tab/home')
 })
@@ -103,8 +113,9 @@ angular.module('starter', ['ionic'])
     $scope.fishs=data;
 
   });
+
   $scope.data={showReorder: false};
- $scope.whichfish=$state.params.aId;
+  $scope.whichfish=$state.params.aId;
   
 
   $scope.moveItem = function(item, fromIndex, toIndex){
@@ -116,7 +127,8 @@ angular.module('starter', ['ionic'])
 
 .controller('CrackLobsterController', ['$scope','$http', 
   function($scope, $http){
-  $http.get('js/lobster.json').success(function(data){
+  
+    $http.get('js/lobster.json').success(function(data){
     $scope.cracklobster=data;
 
   });
@@ -128,5 +140,11 @@ angular.module('starter', ['ionic'])
     $scope.wines=data;
   });
 
-}]);
+}])
+.controller('UpselmwController', ['$scope','$http', 
+  function($scope, $http){
+  $http.get('js/upselmw.json').success(function(data){
+    $scope.upseltips=data;
+  });
 
+}]);
