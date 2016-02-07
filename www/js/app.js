@@ -73,12 +73,31 @@ angular.module('starter', ['ionic'])
         }
       }
     })
+    .state('tabs.lobcrablist',{
+      url: '/resources/lobcrablist',
+      views: {
+        'list-tab':{
+          templateUrl: 'templates/lobcrablist.html',
+          controller: 'CrabListController'
+        }
+      }
+    })
      .state('tabs.fishdetail', {
       url: '/resources/fishlist/:aId',
       views: {
         'list-tab' : {
           templateUrl: 'templates/fishdetail.html',
           controller: 'ListController'
+        }
+      }
+    })
+
+     .state('tabs.lobcrabdetail', {
+      url: '/resources/lobcrabdetail/:aId',
+      views: {
+        'list-tab' : {
+          templateUrl: 'templates/lobcrabdetail.html',
+          controller: 'CrabListController'
         }
       }
     })
@@ -117,10 +136,34 @@ angular.module('starter', ['ionic'])
 
 .controller('ListController', ['$scope','$http','$state', 
   function($scope, $http, $state){
-  $http.get('js/fresh_fish.json').success(function(data){
+
+    $http.get('js/fresh_fish.json').success(function(data){
     $scope.fishs=data;
 
   });
+  
+  
+
+  $scope.data={showReorder: false};
+  $scope.whichfish=$state.params.aId;
+  
+
+  $scope.moveItem = function(item, fromIndex, toIndex){
+    $scope.fishs.splice(fromIndex, 1);
+    $scope.fishs.splice(toIndex, 0, item);
+  }
+
+}])
+
+.controller('CrabListController', ['$scope','$http','$state', 
+  function($scope, $http, $state){
+
+    $http.get('js/lobcrablist.json').success(function(data){
+    $scope.lobcrab=data;
+
+  });
+  
+  
 
   $scope.data={showReorder: false};
   $scope.whichfish=$state.params.aId;
@@ -135,7 +178,6 @@ angular.module('starter', ['ionic'])
 
 .controller('CrackLobsterController', ['$scope','$http', 
   function($scope, $http){
-  
     $http.get('js/lobster.json').success(function(data){
     $scope.cracklobster=data;
 

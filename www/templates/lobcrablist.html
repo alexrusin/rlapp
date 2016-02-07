@@ -1,4 +1,4 @@
-    <ion-view view-title="Fresh Fish">
+<ion-view view-title="Lobster and Crab">
     <ion-nav-buttons side="secondary">
     <button 
       class="button button-icon ion-navicon"
@@ -14,8 +14,8 @@
       </div>
       <ion-content class="has-subheader">
         <ion-list show-reorder="data.showReorder">
-          <ion-item ng-repeat="item in fishs | filter: query" class="item item-avatar" href="#/tab/resources/fishlist/{{item.image}}">
-            <img ng-src="img/{{item.image}}.jpg" alt="{{item.name}}">
+          <ion-item ng-repeat="item in lobcrab | filter: query" class="item item-avatar" href="#/tab/resources/lobcrabdetail/{{item.image}}">
+            <img ng-src="img/lobcrab/{{item.image}}.jpg" alt="{{item.name}}">
             <h2>{{item.name}}</h2>
             <p>{{item.facts}}</p>
             <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)">

@@ -26,7 +26,47 @@
 		"texture":"Firm, Flakey",
 		"prep":"Grilled, broiled, blackened",
 		"source":"Pacific Ocean, Atlantic Ocean",
-		"method":"Wild caught",
+		"method":"Wild-caught",
 		"facts":"The largest member of Flounder family. Grows to over 450 lbs."
+	},
+	{
+		"name":"Red Snapper",
+		"image":"snapper_img",
+		"taste": "Moderate",
+		"texture":"Firm, Very flakey",
+		"prep":"Grilled, broiled, blackened",
+		"source":"Gulf of Mexico",
+		"method":"Wild-caught",
+		"facts":"Similar species to Grouper and Corvina. Wild-caught near natural obstructions like feefs and rocks"
+	},
+	{
+		"name":"Tilapia",
+		"image":"tilapia_img",
+		"taste": "Mild",
+		"texture":"Delicate",
+		"prep":"Broiled, blackened, grilled, fried",
+		"source":"South Pacific Ocean, Various freshwater lakes",
+		"method":"Aquaculture",
+		"facts":"One of the most cultivated fish in the world. Typically a freshwater fish that has adapted to saltwater aquaculture."
+	},
+	{
+		"name":"Sole",
+		"image":"sole_img",
+		"taste": "Mild",
+		"texture":"Delicate, small flakes",
+		"prep":"Broiled, fried, blackened",
+		"source":"Pacific Ocean",
+		"method":"Wild-caught",
+		"facts":"A member of the Flounder family. Both eyes on one side of the body"
+	},
+	{
+		"name":"Cod",
+		"image":"cod_img",
+		"taste": "Very mild",
+		"texture":"Tender, large flakes",
+		"prep":"Fried, broiled, blackened",
+		"source":"Pacific Ocean< Atlantic Ocean",
+		"method":"Wild-caught",
+		"facts":"Similar species to Haddock. Produces a natural substance to protect itself which allows it to swim in icy nothern oceans."
 	}
 ]
