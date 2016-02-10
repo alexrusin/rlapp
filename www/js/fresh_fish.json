@@ -65,8 +65,18 @@
 		"taste": "Very mild",
 		"texture":"Tender, large flakes",
 		"prep":"Fried, broiled, blackened",
-		"source":"Pacific Ocean< Atlantic Ocean",
+		"source":"Pacific Ocean, Atlantic Ocean",
 		"method":"Wild-caught",
 		"facts":"Similar species to Haddock. Produces a natural substance to protect itself which allows it to swim in icy nothern oceans."
+	},
+	{
+		"name":"Haddock",
+		"image":"haddock_img",
+		"taste": "Very mild",
+		"texture":"Lean, tender",
+		"prep":"Broiled, blackened, friend",
+		"source":"North Atlantic Ocean",
+		"method":"Wild-caught",
+		"facts":"A member of the Cod family. Served with skin on to differentiate from Cod"
 	}
 ]

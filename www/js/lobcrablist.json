@@ -6,8 +6,47 @@
 		"texture":"Firm, thick leg meat, tender",
 		"prep":"Steamed",
 		"source":"Bering Sea, Gulf of Alaska, Sea of Okhotsk",
-		"method":"Aquaculture",
+		"method":"Wild-caught",
 		"facts":"Giant of the crab species, \"fresh-frozen\" at sea, glazed with protective coating of salt water"
+	},
+	{
+		"name":"Snow Crab",
+		"image":"snowcrab_img",
+		"taste": "Sweet, slightly salty, moist, mild",
+		"texture":"Firm, long meat, delicate, tender, succulent",
+		"prep":"Steamed",
+		"source":"Bering Sea, Gulf of Alaska, North Atlantic Ocean, Sea of Okhotsk",
+		"method":"Wild-caught",
+		"facts":"Glazed with protective coating of salt water. Snow crab can grow as big as 4 lbs"
+	},
+	{
+		"name":"North American/Maine/Maritime Lobster",
+		"image":"mainelobster_img",
+		"taste": "Sweet, rich, savory, slightly salty",
+		"texture":"Tender, firm tail meat, less firm claw meat, lean",
+		"prep":"Steamed whole or split and cleaned, broiled and stuffed, tails - grilled, broiled",
+		"source":"North Atlantic Ocean, Gulf of Maine Bay of Fundy, Gulf of St. Lawrence",
+		"method":"Wild-caught",
+		"facts":"Can grow up to 45 lbs, lobsters take 7 years to grow to 1 lb; each additional pound takes 4 years.  A 5 pounder is about 23 years old.  Found in underwater canyons up to 90 miles of the Eastern seaboard from New England to Canada."
+	},
+	{
+		"name":"Rock Lobster",
+		"image":"rocklobster_img",
+		"taste": "Slightly less sweet than Maine lobster",
+		"texture":"Firm, lean, slightly less tender than Maine Lobster, coarse",
+		"prep":"Grilled, broiled",
+		"source":"North Atlantic Ocean, South Atlantic Ocean, Gulf of Mexico, Indian Ocean, Coral Sea",
+		"method":"Wild-caught",
+		"facts":"Also called spiny lobster because of the spines on its body.  Don't have claws like Maine lobster. The tail is the only edible part."
+	},
+	{
+		"name":"Langostino",
+		"image":"langostino_img",
+		"taste": "Sweet flavor similar to shrimp, delicate",
+		"texture":"Soft, tender",
+		"prep":"Baked, broiled",
+		"source":"Pacific Ocean",
+		"method":"Wild-caught",
+		"facts":"Use only tail meat of these small crustaceans.  Comes mainly from Pacific Ocean."
 	}
-
 ]

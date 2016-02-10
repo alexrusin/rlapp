@@ -1,0 +1,13 @@
+[
+	{
+		"name":"Shrimp",
+		"image":"shrimp_img",
+		"taste": "Sweet, takes flavor of what's prepared with",
+		"texture":"Firm",
+		"prep":"Grilled, fried, chilled, broiled",
+		"source":"South Pacific Ocean, South Atlantic Ocean, Indian Ocean, Arabian Sea,Bay of Bengal, Flores Sea, Timor Sea, South China Sea, East China Sea",
+		"method":"Aquaculture, wild-caught",
+		"facts":"Red Lobster is the biggest seller.  Most of the shrimp is farm-raised.  Red Lobster was the first to introduce popcon shrimp."
+	}
+
+]

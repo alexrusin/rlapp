@@ -82,6 +82,15 @@ angular.module('starter', ['ionic'])
         }
       }
     })
+    .state('tabs.shellfishlist',{
+      url: '/resources/shellfishlist',
+      views: {
+        'list-tab':{
+          templateUrl: 'templates/shellfishlist.html',
+          controller: 'ShellfishListController'
+        }
+      }
+    })
      .state('tabs.fishdetail', {
       url: '/resources/fishlist/:aId',
       views: {
@@ -98,6 +107,16 @@ angular.module('starter', ['ionic'])
         'list-tab' : {
           templateUrl: 'templates/lobcrabdetail.html',
           controller: 'CrabListController'
+        }
+      }
+    })
+
+     .state('tabs.shellfishdetail', {
+      url: '/resources/shellfishdetail/:aId',
+      views: {
+        'list-tab' : {
+          templateUrl: 'templates/shellfishdetail.html',
+          controller: 'ShellfishListController'
         }
       }
     })
@@ -162,16 +181,35 @@ angular.module('starter', ['ionic'])
     $scope.lobcrab=data;
 
   });
-  
-  
+    
 
   $scope.data={showReorder: false};
   $scope.whichfish=$state.params.aId;
   
 
   $scope.moveItem = function(item, fromIndex, toIndex){
-    $scope.fishs.splice(fromIndex, 1);
-    $scope.fishs.splice(toIndex, 0, item);
+    $scope.lobcrab.splice(fromIndex, 1);
+    $scope.lobcrab.splice(toIndex, 0, item);
+  }
+
+}])
+
+.controller('ShellfishListController', ['$scope','$http','$state', 
+  function($scope, $http, $state){
+
+    $http.get('js/shellfishlist.json').success(function(data){
+    $scope.shellfish=data;
+
+  });
+    
+
+  $scope.data={showReorder: false};
+  $scope.whichfish=$state.params.aId;
+  
+
+  $scope.moveItem = function(item, fromIndex, toIndex){
+    $scope.shellfish.splice(fromIndex, 1);
+    $scope.shellfish.splice(toIndex, 0, item);
   }
 
 }])
