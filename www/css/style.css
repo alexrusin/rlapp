@@ -57,4 +57,5 @@
 
 .holds-the-iframe {
   background :url(../img/loader.gif) center center no-repeat fixed;
+  height: 500px;
  }

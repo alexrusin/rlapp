@@ -8,6 +8,66 @@
 		"source":"South Pacific Ocean, South Atlantic Ocean, Indian Ocean, Arabian Sea,Bay of Bengal, Flores Sea, Timor Sea, South China Sea, East China Sea",
 		"method":"Aquaculture, wild-caught",
 		"facts":"Red Lobster is the biggest seller.  Most of the shrimp is farm-raised.  Red Lobster was the first to introduce popcon shrimp."
+	},
+	{
+		"name":"Oysthers",
+		"image":"oyster_img",
+		"taste": "Earthy, slightly salty",
+		"texture":"Delicate, soft, plump, tender",
+		"prep":"Steamed, raw, broild with topping, fried",
+		"source":"Gulf of Mexico",
+		"method":"Wild-caught",
+		"facts":"Pearls are formed in oysters from a granule of sand.  Oysters breathe with gills similar to fish.  The largest oysters grow 3 ft in shell width."
+	},
+	{
+		"name":"Mussles",
+		"image":"mussle_img",
+		"taste": "Sweet, earthy",
+		"texture":"Delicate, plump",
+		"prep":"Broiled, steamed",
+		"source":"Gulf of St. Lawrence",
+		"method":"Aquaculture",
+		"facts":"Mussles pump 3 quarts of water through gills per day to eat plankton."
+	},
+	{
+		"name":"Clams",
+		"image":"clam_img",
+		"taste": "Sweet, mild",
+		"texture":"Delicate, tender",
+		"prep":"Steamed, fried",
+		"source":"North Atlantic Ocean",
+		"method":"Aquaculture, wild-caught",
+		"facts":"Clams open once steamed; never eat a clam that doesn't open. Clams live up to 20 years."
+	},
+	{
+		"name":"Bay Scallops",
+		"image":"bayscallop_img",
+		"taste": "Flavorful, sweeter than sea scallops",
+		"texture":"Tender, smaller, lean firm meat, delicate",
+		"prep":"Broiled, fried",
+		"source":"South Atlantic Ocean, Yellow Sea",
+		"method":"Aquaculture, wild-caught",
+		"facts":"Bay Scallops sweem by rapidly opening and closing their shells."
+	},
+	{
+		"name":"Sea Scallops",
+		"image":"seascallop_img",
+		"taste": "Mild, sweet, slightly salty",
+		"texture":"Tender, plump, lean, firm",
+		"prep":"Broiled, fried, grilled",
+		"source":"North Atlantic Ocean, Sea of Japan",
+		"method":"Aquaculture, wild-caught",
+		"facts":"Scallop meat is the adductor muscle, which the scallop uses to open and close its shell."
+	},
+	{
+		"name":"Calamari (squid)",
+		"image":"squid_img",
+		"taste": "Delicate flavor",
+		"texture":"Succulent, very firm",
+		"prep":"Fried",
+		"source":"Yellow Sea, Arabian Sea, Bay of Bergal, Gulf of Tailand",
+		"method":"Wild-caught",
+		"facts":"Squid range from 1 to 100 lbs.  All parts of the squid can be eaten."
 	}
 
 ]

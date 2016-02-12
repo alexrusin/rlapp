@@ -78,5 +78,45 @@
 		"source":"North Atlantic Ocean",
 		"method":"Wild-caught",
 		"facts":"A member of the Cod family. Served with skin on to differentiate from Cod"
+	},
+	{
+		"name":"Mahi Mahi",
+		"image":"mahi_img",
+		"taste": "Mild",
+		"texture":"Firm, smooth, large flakes",
+		"prep":"Grilled, broiled, blackened",
+		"source":"Pacific Ocean, Atlantic Ocean",
+		"method":"Wild-caught",
+		"facts":"Similar species to Wahoo or Snapper.  One of the most colorful fish in the Ocean."
+	},
+	{
+		"name":"Arctic Char",
+		"image":"char_img",
+		"taste": "Bold",
+		"texture":"Tender, firm flake",
+		"prep":"Grilled, broiled, blackened",
+		"source":"North Atlantic Ocean",
+		"method":"Aquaculture",
+		"facts":"Similar to Salmon in color and Trout in size. Served with the skin on."
+	},
+	{
+		"name":"Grouper",
+		"image":"grouper_img",
+		"taste": "Moderate",
+		"texture":"Firm, heavy flake",
+		"prep":"Grilled, broiled, blackened, fried",
+		"source":"Atlantic Ocean, Gulf of Mexico",
+		"method":"Wild-caught",
+		"facts":"Changes colors and patterns to match background.  Red and black Grouper are the most common."
+	},
+	{
+		"name":"Wahoo (Ono)",
+		"image":"wahoo_img",
+		"taste": "Moderate",
+		"texture":"Soft, smooth flake",
+		"prep":"Grilled, broiled, blackened",
+		"source":"Pacific Ocean, Gulf of Mexico",
+		"method":"Wild-caught",
+		"facts":"Fast swimming fish - up to 50 mph.  Found in deep tropical waters"
 	}
 ]

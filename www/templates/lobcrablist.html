@@ -14,10 +14,11 @@
       </div>
       <ion-content class="has-subheader">
         <ion-list show-reorder="data.showReorder">
-          <ion-item ng-repeat="item in lobcrab | filter: query" class="item item-avatar" href="#/tab/resources/lobcrabdetail/{{item.image}}">
+          <ion-item ng-repeat="item in lobcrab | filter: query" class="item item-avatar item-icon-right" href="#/tab/resources/lobcrabdetail/{{item.image}}">
             <img ng-src="img/lobcrab/{{item.image}}.jpg" alt="{{item.name}}">
             <h2>{{item.name}}</h2>
             <p>{{item.facts}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
             <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)">
             </ion-reorder-button>
          </ion-item>
