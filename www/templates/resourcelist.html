@@ -29,10 +29,12 @@
            <i class="icon ion-chevron-right icon-accessory"></i>
           </ion-item>
           <div class="item item-divider">
-           <strong>Salesmanship</strong>
+           <strong>Tip Share</strong>
           </div>
-          <ion-item href="#/tab/resources/upselmw" class="item-text-wrap item-icon-right">
-           How to Increase Your Sales &#8211; by Mike Windt 
+          <ion-item ng-repeat="tipshare in tipshares"
+          href="#/tab/resources/tipshare/{{tipshare.id}}"           
+          class="item-text-wrap item-icon-right">
+           {{tipshare.title}} &#8211; by {{tipshare.author}} 
            <i class="icon ion-chevron-right icon-accessory"></i>
           </ion-item>
         </ion-list>

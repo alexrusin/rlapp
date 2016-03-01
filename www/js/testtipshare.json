@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "First Post",
+    "author": "Alex Rusin",
+    "article": "This is the first article",
+    "active": true,
+    "createdAt": "2016-02-20T18:24:38.000Z",
+    "updatedAt": "2016-02-20T18:24:38.000Z"
+  },
+  {
+    "id": 2,
+    "title": "Second Post",
+    "author": "Alex Rusin",
+    "article": "<strong>This</strong> is the first article",
+    "active": true,
+    "createdAt": "2016-02-20T18:37:29.000Z",
+    "updatedAt": "2016-02-20T18:37:29.000Z"
+  }
+]

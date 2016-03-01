@@ -1,0 +1,14 @@
+<ion-view view-title="Tip Share">
+	<div class="bar bar-subheader bar-light" ng-repeat="tipshare in tipshares | filter: { id: whichtip }">
+  		<h2 class="title">{{tipshare.title}} &#8211; by {{tipshare.author}}</h2>
+	</div>
+		
+
+		<ion-content class="has-subheader">
+		<div class="card" ng-repeat="tipshare in tipshares | filter: { id: whichtip }">
+			<div class="item item-text-wrap" ng-bind-html = "tipshare.article"></div>
+  			
+		</div>
+		
+	</ion-content>
+</ion-view>

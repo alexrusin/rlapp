@@ -117,6 +117,16 @@
 		"prep":"Grilled, broiled, blackened",
 		"source":"Pacific Ocean, Gulf of Mexico",
 		"method":"Wild-caught",
-		"facts":"Fast swimming fish - up to 50 mph.  Found in deep tropical waters"
+		"facts":"Fast swimming fish - up to 50 mph.  Found in deep tropical waters."
+	},
+	{
+		"name":"Whitefish",
+		"image":"whitefish_img",
+		"taste": "Mild",
+		"texture":"Delicate, flakey",
+		"prep":"Broiled, blackened, fried",
+		"source":"Great Lakes",
+		"method":"Wild-caught",
+		"facts":"Found in cold lake waters.  Average size of 4 lbs."
 	}
 ]

@@ -52,7 +52,8 @@ angular.module('starter', ['ionic'])
       url: '/resources',
       views: {
         'list-tab':{
-          templateUrl: 'templates/resourcelist.html'
+          templateUrl: 'templates/resourcelist.html',
+          controller: 'ResourceListController'
          }
       }
     })
@@ -60,10 +61,20 @@ angular.module('starter', ['ionic'])
       url: '/quizes',
       views: {
         'quiz-tab':{
-          templateUrl: 'templates/practicequizes.html'
+          templateUrl: 'templates/practicequizes.html',
+          controller: 'SelectQuizController'
          }
       }
-    })    
+    }) 
+    .state('tabs.quiz',{
+      url: '/quizes/:quizId/:quizName',
+      views: {
+        'quiz-tab':{
+          templateUrl: 'templates/quiz.html',
+          controller: 'QuizController'
+         }
+      }
+    })   
     .state('tabs.fishlist',{
       url: '/resources/fishlist',
       views: {
@@ -139,12 +150,12 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('tabs.upselmw', {
-      url: '/resources/upselmw',
+    .state('tabs.tipshare', {
+      url: '/resources/tipshare/:postId',
       views: {
         'list-tab' : {
-          templateUrl: 'templates/upselmw.html',
-          controller: 'UpselmwController'
+          templateUrl: 'templates/tipshare.html',
+          controller: 'ResourceListController'
         }
       }
     })
@@ -229,10 +240,107 @@ angular.module('starter', ['ionic'])
   });
 
 }])
-.controller('UpselmwController', ['$scope','$http', 
+.controller('ResourceListController', ['$scope','$http','$state', '$sce',
+  function($scope, $http, $state, $sce){
+  $http.get('http://rusin-barqz.herokuapp.com/api/tipshare').success(function(data){
+   data.forEach(function(datum){
+      datum.article = $sce.trustAsHtml(datum.article);
+    });
+    $scope.tipshares=data;
+  }).error(function(){
+        $scope.err = 'Tipshare is unavailable';
+      });
+  $scope.whichtip=$state.params.postId;
+}])
+  .controller('SelectQuizController', ['$scope','$http',
   function($scope, $http){
-  $http.get('js/upselmw.json').success(function(data){
-    $scope.upseltips=data;
-  });
+  $http.get('http://rusin-barqz.herokuapp.com/api/quizes').success(function(data){
+   
+    $scope.quizes=data;
+  }).error(function(){
+        $scope.err = 'Quizes are unavailable';
+      });
+  
+  
+}])
+  .controller('QuizController', ['$scope','$http','$state',
+  function($scope, $http, $state){
+ 
+    $scope.score = 0;
+      $scope.activeQuestion = -1;
+      $scope.activeQuestionAnswer = 0;
+      $scope.percentage = 0;
+    $scope.quizName = $state.params.quizName;
+ 
+  $http.get('http://rusin-barqz.herokuapp.com/api/quizes/'+$state.params.quizId).success(function(data){
+    $scope.myQuestions=shuffleSlice(data);
+    $scope.totalQuestions = $scope.myQuestions.length;
+  }).error(function(){
+        $scope.err = 'Sorry, questions are unavailble.  Please try later';
+   });
 
+  $scope.selectAnswer = function(qIndex, aIndex){
+        var questionState = $scope.myQuestions[qIndex].questionState;
+      
+
+        if( questionState != 'answered'){
+          $scope.myQuestions[qIndex].selectedAnswer = aIndex;
+          var correctAnswer = $scope.myQuestions[qIndex].correct;
+          $scope.myQuestions[qIndex].correctAnswer = correctAnswer;
+
+          if(aIndex === correctAnswer){
+            $scope.myQuestions[qIndex].correctness = 'correct';
+            $scope.score += 1;
+          } else{
+            $scope.myQuestions[qIndex].correctness = 'incorrect';
+          }
+
+          $scope.myQuestions[qIndex].questionState = 'answered';
+
+        }
+
+        $scope.percentage = (($scope.score / $scope.totalQuestions) * 100).toFixed(1);
+
+      }
+
+      $scope.isSelected = function(qIndex, aIndex){
+        return  $scope.myQuestions[qIndex].selectedAnswer === aIndex;
+      }
+
+      $scope.isCorrect = function(qIndex, aIndex){
+        return  $scope.myQuestions[qIndex].correctAnswer === aIndex;
+      }
+
+      $scope.selectContinue = function(){
+
+        return $scope.activeQuestion += 1;
+
+      }
+
+      shuffleSlice = function(array) {
+        var currentIndex = array.length,
+          temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+
+        if (array.length > 20) {
+          array = array.slice(0, 20);
+        }
+
+        return array;
+      }
+
+
+ 
 }]);

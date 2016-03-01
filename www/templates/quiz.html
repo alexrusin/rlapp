@@ -1,0 +1,53 @@
+<ion-view view-title="{{quizName}} Quiz">
+         
+     <ion-content id="myQuiz" class="has-header">
+     	<div class="card">
+		  <div class="item item-divider">
+	    	Question {{activeQuestion+1}} out of {{totalQuestions}}
+	  	  </div>
+		 </div>
+
+		 <div class="intro {{(activeQuestion >-1) ? 'inactive' : 'active' }}">
+		 	
+				<h2>Welcome</h2>
+				<p>Click begin to test your knowledge of the {{quizName}}</p>
+				<p class="button button-positive" ng-click="selectContinue()">Begin</p>
+			
+		</div>
+
+		<div ng-repeat="myQuestion in myQuestions" class="question 
+				{{$index === activeQuestion ? 'active' : 'inactive'}}
+				{{myQuestion.questionState === 'answered' ? 'answered' : 'unanswered'}}
+				" >
+				<p class="txt">{{myQuestion.question}}</p>
+				<p class="ans" 
+					ng-class="{
+					image:answer.image,
+					selected:isSelected($parent.$index, $index), correct:isCorrect($parent.$index, $index)}"
+					ng-style="{'background-image':'url({{answer.image}})'}"
+					ng-click="selectAnswer($parent.$index, $index)"
+					ng-repeat="answer in myQuestions[$index].answers">
+
+					{{answer.text}}
+
+				</p>
+				
+				<div class="card-text feedback">
+					<p ng-show="myQuestion.correctness === 'correct'">You are <strong>correct</strong></p>
+					<p ng-show="myQuestion.correctness === 'incorrect'">Sorry, that is <strong>not correct</strong></p>
+					<p>{{myQuestion.feedback}}</p>
+					<div class="button button-positive" ng-click = "selectContinue()">Continue</div>
+				</div>
+			</div>
+
+			<div class="results {{(totalQuestions === activeQuestion) ? 'active' : 'inactive'}}">
+				<h3 class="card-text">Results</h3>
+				<p class="card-text">You scored {{percentage}}% by correctly answering {{score}} of total {{totalQuestions}} questions</p>
+				<a href="#/tab/quizes" class="card-text button button-positive">Back to Select Quiz page</a>
+
+			</div>
+
+
+	      	
+    </ion-content>
+</ion-view>
