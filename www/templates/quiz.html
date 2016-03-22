@@ -3,7 +3,10 @@
      <ion-content id="myQuiz" class="has-header">
      	<div class="card">
 		  <div class="item item-divider">
-	    	Question {{activeQuestion+1}} out of {{totalQuestions}}
+	    	Question {{activeQuestion < totalQuestions? activeQuestion+1 : activeQuestion}} out of {{totalQuestions}}
+	  	  </div>
+	  	  <div class="item item-divider" ng-hide ="loading">
+	    	{{message}}
 	  	  </div>
 		 </div>
 

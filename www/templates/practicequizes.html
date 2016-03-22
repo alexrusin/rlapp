@@ -1,7 +1,9 @@
 <ion-view view-title="Practice Quizes">
          
      	<ion-content class="has-header">
-     		{{err}}
+     	<div class="item item-divider" ng-hide="loading">
+	    	{{message}}
+	  	  </div>
 	      	<ion-item ng-repeat="quiz in quizes"
 	          href="#/tab/quizes/{{quiz.id}}/{{quiz.name}}"           
 	          class="item-text-wrap item-icon-right">

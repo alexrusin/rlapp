@@ -242,7 +242,7 @@ angular.module('starter', ['ionic'])
 }])
 .controller('ResourceListController', ['$scope','$http','$state', '$sce',
   function($scope, $http, $state, $sce){
-  $http.get('http://rusin-barqz.herokuapp.com/api/tipshare').success(function(data){
+  $http.get('http://rlappapi-env.us-west-2.elasticbeanstalk.com/api/tipshare').success(function(data){
    data.forEach(function(datum){
       datum.article = $sce.trustAsHtml(datum.article);
     });
@@ -252,31 +252,37 @@ angular.module('starter', ['ionic'])
       });
   $scope.whichtip=$state.params.postId;
 }])
+
   .controller('SelectQuizController', ['$scope','$http',
+ 
   function($scope, $http){
-  $http.get('http://rusin-barqz.herokuapp.com/api/quizes').success(function(data){
-   
-    $scope.quizes=data;
+  $scope.loading = false;
+  $scope.message = 'Loading... Please wait.';
+  $http.get('http://rlappapi-env.us-west-2.elasticbeanstalk.com/api/quizes').success(function(data){
+       $scope.quizes=data;
+       $scope.loading = true;
   }).error(function(){
-        $scope.err = 'Quizes are unavailable';
+        $scope.message = 'Sorry, quizes are unavailable.  Please try later.';
       });
   
   
 }])
   .controller('QuizController', ['$scope','$http','$state',
   function($scope, $http, $state){
- 
+    $scope.loading = false;
+    $scope.message = 'Loading... Please wait.';
     $scope.score = 0;
-      $scope.activeQuestion = -1;
-      $scope.activeQuestionAnswer = 0;
-      $scope.percentage = 0;
+    $scope.activeQuestion = -1;
+    $scope.activeQuestionAnswer = 0;
+    $scope.percentage = 0;
     $scope.quizName = $state.params.quizName;
  
-  $http.get('http://rusin-barqz.herokuapp.com/api/quizes/'+$state.params.quizId).success(function(data){
+  $http.get('http://rlappapi-env.us-west-2.elasticbeanstalk.com/api/quizes/'+$state.params.quizId).success(function(data){
     $scope.myQuestions=shuffleSlice(data);
     $scope.totalQuestions = $scope.myQuestions.length;
+    $scope.loading = true;
   }).error(function(){
-        $scope.err = 'Sorry, questions are unavailble.  Please try later';
+      $scope.message = 'Sorry, questions are unavailble.  Please try later';
    });
 
   $scope.selectAnswer = function(qIndex, aIndex){

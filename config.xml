@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.rlapp319996" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.alexrusin.app.rl" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>rlApp</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A resource app for RL servers
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+  <author email="alexrusin_2000@yahoo.com" href="http://alexrusin.com">
+      Alex Rusin
     </author>
   <content src="index.html"/>
   <access origin="*"/>
