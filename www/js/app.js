@@ -3,8 +3,13 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
-
+angular.module('starter', [
+  'ionic',
+  'ngCordova',
+  'tedrssapp.controllers',
+  'tedrssapp.services',
+  'tedrssapp.filters'
+  ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -39,15 +44,22 @@ angular.module('starter', ['ionic'])
       templateUrl: 'templates/tabs.html'
     })
 
-    .state('tabs.home',{
-      url: '/home',
+    .state('tabs.feed',{
+      url: '/feed',
       views: {
-        'home-tab':{
-          templateUrl: 'templates/home.html'
+        'feed-tab':{
+          templateUrl: 'templates/feed.html',
+          controller: 'FeedCtrl'
           
         }
       }
     })
+    .state('post', {
+      url: "/post/:id",
+      templateUrl: "templates/post.html",
+      controller: 'PostCtrl'
+    })
+
     .state('tabs.resources',{
       url: '/resources',
       views: {
@@ -161,7 +173,7 @@ angular.module('starter', ['ionic'])
     })
 
 
-    $urlRouterProvider.otherwise('/tab/home')
+    $urlRouterProvider.otherwise('/tab/resources')
 })
 
 .controller('ListController', ['$scope','$http','$state', 
@@ -242,7 +254,7 @@ angular.module('starter', ['ionic'])
 }])
 .controller('ResourceListController', ['$scope','$http','$state', '$sce',
   function($scope, $http, $state, $sce){
-  $http.get('http://rlappapi-env.us-west-2.elasticbeanstalk.com/api/tipshare').success(function(data){
+  $http.get('http://myapi.website/rlquiz/api/tipshare').success(function(data){
    data.forEach(function(datum){
       datum.article = $sce.trustAsHtml(datum.article);
     });
@@ -258,7 +270,7 @@ angular.module('starter', ['ionic'])
   function($scope, $http){
   $scope.loading = false;
   $scope.message = 'Loading... Please wait.';
-  $http.get('http://rlappapi-env.us-west-2.elasticbeanstalk.com/api/quizes').success(function(data){
+  $http.get('http://myapi.website/rlquiz/api/quizes').success(function(data){
        $scope.quizes=data;
        $scope.loading = true;
   }).error(function(){
@@ -277,7 +289,7 @@ angular.module('starter', ['ionic'])
     $scope.percentage = 0;
     $scope.quizName = $state.params.quizName;
  
-  $http.get('http://rlappapi-env.us-west-2.elasticbeanstalk.com/api/quizes/'+$state.params.quizId).success(function(data){
+  $http.get('http://myapi.website/rlquiz/api/quizes/'+$state.params.quizId).success(function(data){
     $scope.myQuestions=shuffleSlice(data);
     $scope.totalQuestions = $scope.myQuestions.length;
     $scope.loading = true;
